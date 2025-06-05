@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS reminders (
+  id SERIAL PRIMARY KEY,
+  job_id INTEGER NOT NULL REFERENCES jobs(id) ON DELETE CASCADE,
+  reminder_date DATE NOT NULL,
+  message TEXT,
+  is_completed BOOLEAN DEFAULT FALSE
+);
